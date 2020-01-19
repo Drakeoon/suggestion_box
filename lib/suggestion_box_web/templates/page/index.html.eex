@@ -1,6 +1,6 @@
 <div class="jumbotron mt-5 text-center">
   <h1>Suggestions Box 🐶</h1>
   <p>Tell us what you love, what you like or what bothers you - we'll do something about it!</p>
-    
-  <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+
+  <textarea class="form-control" placeholder="<%= random_suggestion %>" cols="30" rows="10"></textarea>
 </div>
