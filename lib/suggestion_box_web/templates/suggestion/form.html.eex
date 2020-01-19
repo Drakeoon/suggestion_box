@@ -5,11 +5,10 @@
     </div>
   <% end %>
 
-  <%= label f, :description %>
-  <%= textarea f, :description %>
+  <%= textarea f, :description, class: "form-control", placeholder: random_suggestion, rows: 6 %>
   <%= error_tag f, :description %>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Submit suggestion", class: "btn btn-primary mt-3" %>
   </div>
 <% end %>
