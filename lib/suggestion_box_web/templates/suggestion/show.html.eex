@@ -1,0 +1,13 @@
+<h1>Show Suggestion</h1>
+
+<ul>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @suggestion.description %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.suggestion_path(@conn, :edit, @suggestion) %></span>
+<span><%= link "Back", to: Routes.suggestion_path(@conn, :index) %></span>

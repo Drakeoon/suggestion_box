@@ -1,3 +1,23 @@
-<section>
-  <h1>This will be a suggestion box!</h1>
-</section>
+<div class="jumbotron mt-5 text-center">
+  <h1>Suggestions Box 🐶</h1>
+  <p>Tell us what you love, what you like or what bothers you - we'll do something about it!</p>
+  
+  <%= render SuggestionBoxWeb.SuggestionView, "form.html", Map.put(assigns, :action, Routes.suggestion_path(@conn, :create)) %>
+</div>
+
+
+<hr>
+
+<h2>Recent suggestions</h2>
+<p>Entries from last two months, displaying newest first</p>
+
+<div class="card-columns">
+  <%= for suggestion <- @suggestions do %>
+    <div class="card">      
+      <div class="card-body">
+        <h5 class="card-title">Anonymous</h5>
+        <p class="card-text"><%= suggestion.description %></p>
+      </div>
+    </div>
+  <%= end %>
+</div>

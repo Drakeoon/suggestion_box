@@ -1,0 +1,29 @@
+<div class="jumbotron text-center">
+  <h1>Manage Suggestions</h1>
+</div>
+
+<span><%= link "New Suggestion", to: Routes.suggestion_path(@conn, :new), class: "btn btn-primary float-right mb-4" %></span>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Description</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for suggestion <- @suggestions do %>
+        <tr>
+          <td><%= suggestion.id %>
+          <td><%= suggestion.description %></td>
+
+          <td>
+            <span><%= link "Show", to: Routes.suggestion_path(@conn, :show, suggestion) %></span>
+            <span><%= link "Edit", to: Routes.suggestion_path(@conn, :edit, suggestion) %></span>
+            <span><%= link "Delete", to: Routes.suggestion_path(@conn, :delete, suggestion), method: :delete, data: [confirm: "Are you sure?"] %></span>
+          </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
